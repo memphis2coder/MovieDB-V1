@@ -57,7 +57,7 @@ const Navigation = props => {
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
-                name="userSearch"
+                onChange={props.handleChange}
               />
               <button
                 className="btn btn-outline-success my-2 my-sm-0"
