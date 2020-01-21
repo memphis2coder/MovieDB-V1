@@ -1,9 +1,26 @@
-.App {
-  text-align: center;
+body {
+  background-color: #282c34;
+  color: white;
 }
 
-.App-logo {
-  height: 40vmin;
+a {
+  color: white !important;
+}
+
+/* Navigation Styles */
+.navbar {
+  border-bottom: 1px solid lightgray;
+}
+.navbar-brand {
+  font-size: calc(20px + 2vmin);
+  color: #01d277 !important;
+}
+
+.nav-link {
+  font-size: calc(5px + 2vmin);
+}
+.nav-link:hover {
+  color: #01d277 !important;
 }
 
 .App-header {
@@ -15,8 +32,4 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
-
-.App-link {
-  color: #09d3ac;
 }
