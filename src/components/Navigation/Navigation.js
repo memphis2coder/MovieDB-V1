@@ -1,15 +1,5 @@
 import React from "react";
 
-// const API_URL =
-//   "https://api.themoviedb.org/3/movie/76341?api_key=process.env.REACT_APP_API_KEY";
-
-// state = {
-//   componentDidMount() {
-//     fetch(API_URL)
-//       .then(res => res.json())
-//       .then();
-//   }
-// };
 const Navigation = props => {
   return (
     <div>
@@ -48,16 +38,12 @@ const Navigation = props => {
                 </a>
               </li>
             </ul>
-            <form
-              className="form-inline my-2 my-lg-0"
-              onSubmit={props.handleSubmit}
-            >
+            <form className="form-inline my-2 my-lg-0">
               <input
                 className="form-control mr-sm-2"
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
-                onChange={props.handleChange}
               />
               <button
                 className="btn btn-outline-success my-2 my-sm-0"

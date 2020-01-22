@@ -1,50 +1,34 @@
-import React, { Component } from "react";
-// import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { API_KEY, API_URL, API_IMG } from "./Config";
 import "./App.css";
 // components
-import Navigation from "./components/Navigation";
-import Hero from "./components/Hero";
+import Navigation from "./components/Navigation/Navigation";
+import Hero from "./components/Hero/Hero";
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      movies: [],
-      searchTerm: ""
-    };
-    this.apiKey = process.env.REACT_APP_API_KEY;
-  }
+function App() {
+  // put all the datas fetched from moviedb api into state
+  const [Movies, setMovies] = useState([]);
 
-  handleSubmit = e => {
-    e.preventDefault();
-
-    fetch(
-      `https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&query=${this.state.searchTerm}`
-    )
-      .then(data => data.json())
-      .then(data => {
-        console.log(data);
-        this.setState({ movies: [...data.results] });
+  // fetch popular movie data from MOVIEDB
+  useEffect(() => {
+    fetch(`${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page1`)
+      .then(response => response.json())
+      .then(response => {
+        console.log(response);
+        setMovies(response.result);
       });
-  };
+  }, []);
 
-  handleChange = e => {
-    this.setState({ searchTerm: e.target.value });
-  };
+  return (
+    // main landing page
 
-  render() {
-    return (
-      <div>
-        <Navigation
-          handleSubmit={this.handleSubmit}
-          handleChange={this.handleChange}
-        />
-        <div className="container">
-          <Hero />
-        </div>
+    <div>
+      <Navigation />
+      <div className="container">
+        <Hero />
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default App;
