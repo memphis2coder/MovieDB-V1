@@ -6,34 +6,3 @@ body {
 a {
   color: white !important;
 }
-
-/* Navigation Styles */
-.navbar {
-  border-bottom: 1px solid lightgray;
-}
-.navbar-brand {
-  font-size: calc(20px + 2vmin);
-  color: #01d277 !important;
-}
-.nav-link {
-  font-size: calc(5px + 2vmin);
-}
-.nav-link:hover {
-  color: #01d277 !important;
-}
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-/* Jumbotron styles */
-.jumbotron {
-  height: 60vh;
-  margin-top: 1rem;
-}

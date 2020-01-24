@@ -1,75 +1,34 @@
-import React, { Component } from "react";
-import { API_KEY, API_URL } from "./Config";
+import React, { Component, Suspense } from "react";
+// import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import "./App.css";
-// components
+// components for the website
 import Navigation from "./components/Navigation/Navigation";
-import Hero from "./components/Hero/Hero";
+import LandingPage from "./components/LandingPage/LandingPage";
+// import MovieDetailPage from "./components/LandingPage/MovieDetailPage/MovieDetailPage";
 
 class App extends Component {
   //get value of search when button is clicked
   getMovies = e => {
     const movieSearch = e.target.elements.movieSearch.value;
     e.preventDefault();
+    //clear input after enter
+    e.target.reset();
     console.log(movieSearch);
   };
 
-  // store data
-  state = {
-    movies: []
-  };
-
-  // connect to api popular
-  async componentDidMount() {
-    await fetch(
-      `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page1`
-    )
-      .then(res => res.json())
-      .then(data => {
-        this.setState({ movies: data });
-        console.log(data);
-        console.log(data.results[0].title);
-      });
-  }
-
   render() {
     return (
-      // main landing page
-      <div>
-        <Navigation getMovies={this.getMovies} />
-        <div className="container">
-          <Hero />
+      <Suspense fallback={<div>Loading...</div>}>
+        <div>
+          <Navigation getMovies={this.getMovies} />
+          <div className="container">
+            <LandingPage />
+          </div>
         </div>
-      </div>
+      </Suspense>
     );
   }
 }
 
 export default App;
-
-// state = {
-
-// //   loading: true,
-//   //   movie: null
-//   // };
-
-//   // async componentDidMount() {
-//   //   const url = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page1`;
-//   //   const response = await fetch(url);
-//   //   const data = await response.json();
-//   //   this.setState({ movie: data.results[0], loading: false });
-//   //   console.log(data.results[0]);
-//   // }
-
-//  //put all the datas fetched from moviedb api into state
-//  const [Movies, setMovies] = useState([]);
-
-//  //fetch popular movie data from MOVIEDB
-//  useEffect(() => {
-//    fetch(`${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page1`)
-//      .then(response => response.json())
-//      .then(response => {
-//        setMovies(response.result);
-//        console.log(response);
-//      });
-//  }, []);

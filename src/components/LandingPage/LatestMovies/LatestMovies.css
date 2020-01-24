@@ -1,0 +1,7 @@
+.latestMovies h1 {
+  font-size: calc(20px + 2vmin);
+}
+
+hr {
+  background-color: white;
+}

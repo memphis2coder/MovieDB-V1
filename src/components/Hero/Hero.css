@@ -1,5 +1,21 @@
-/* .jumbotron {
-  background: url("../../img/testimg.jpg");
-  background-size: cover;
-  background-position: center;
-} */
+/* Jumbotron styles */
+.jumbotron {
+  height: 60vh;
+  margin-top: 1rem;
+}
+
+.hero-text-background {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding-left: 1rem;
+  border-radius: 5px;
+}
+
+.hero-text-background h1 {
+  font-size: calc(20px + 2vmin);
+  padding-top: 0.5rem;
+  text-decoration: underline;
+}
+
+.hero-text-background p {
+  font-size: calc(1px + 2vmin);
+}
