@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import "./Navigation.css";
 
 const Navigation = props => {
@@ -24,19 +26,19 @@ const Navigation = props => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mx-auto">
               <li className="nav-item">
-                <a className="nav-link" href="/">
+                <Link to="/movies" className="nav-link">
                   MOVIES <span className="sr-only">(current)</span>
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/">
+                <Link to="/tvshows" className="nav-link">
                   TV SHOWS
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/">
+                <Link to="/people" className="nav-link">
                   PEOPLE
-                </a>
+                </Link>
               </li>
             </ul>
             <form
@@ -49,10 +51,13 @@ const Navigation = props => {
                 placeholder="Search"
                 aria-label="Search"
                 name="movieSearch"
+                id="movieSearch"
               />
               <button
                 className="btn btn-outline-success my-2 my-sm-0"
                 type="submit"
+                name="submit"
+                id="submit"
               >
                 Search
               </button>

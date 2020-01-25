@@ -3,7 +3,7 @@ import "./Hero.css";
 
 const Hero = props => {
   return (
-    <div>
+    <div className="container">
       <div
         className="jumbotron"
         style={{

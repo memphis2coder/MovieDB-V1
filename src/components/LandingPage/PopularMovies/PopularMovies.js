@@ -4,32 +4,34 @@ import "./PopularMovies.css";
 const PopularMovies = props => {
   return (
     <div className="popularMovies">
-      <h1>Popular Movies</h1>
-      <hr />
       <div className="container">
-        <div className="row text-center">
-          <div className="col-6 col-md-3">
-            one of four columns
-            <div className="card text-dark shadow custom-card border-dark">
-              <img src={props.image} className="card-img-top" alt="img" />
-              <div className="card-body ">
-                <h5 className="card-title">{props.title}</h5>
-                <a href="#" className="stretched-link"></a>
+        <h1>Popular Movies</h1>
+        <hr />
+        <div className="container">
+          <div className="row text-center">
+            <div className="col-6 col-md-3">
+              one of four columns
+              <div className="card text-light shadow custom-card border-dark">
+                <img src={props.image} className="card-img-top" alt="img" />
+                <div className="card-body ">
+                  <h5 className="card-title">{props.title}</h5>
+                  {/* <a href="#" className="stretched-link"></a> */}
+                </div>
               </div>
             </div>
-          </div>
-          <div className="col-6 col-md-3">
-            two of four columns
-            <div className="card text-dark shadow custom-card border-dark">
-              <img src={props.image} className="card-img-top" alt="img" />
-              <div className="card-body ">
-                <h5 className="card-title">{props.title}</h5>
-                <a href="#" className="stretched-link"></a>
+            <div className="col-6 col-md-3">
+              two of four columns
+              <div className="card text-light shadow custom-card border-dark">
+                <img src={props.image} className="card-img-top" alt="img" />
+                <div className="card-body ">
+                  <h5 className="card-title">{props.title}</h5>
+                  {/* <a href="#" className="stretched-link"></a> */}
+                </div>
               </div>
             </div>
+            <div className="col-6 col-md-3">three of four columns</div>
+            <div className="col-6 col-md-3">four of four columns</div>
           </div>
-          <div className="col-6 col-md-3">three of four columns</div>
-          <div className="col-6 col-md-3">four of four columns</div>
         </div>
       </div>
     </div>
