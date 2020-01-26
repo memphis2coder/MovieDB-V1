@@ -5,9 +5,6 @@ import "./App.css";
 // components for the website
 import Navigation from "./components/Navigation/Navigation";
 import LandingPage from "./components/LandingPage/LandingPage";
-import People from "./components/People/People";
-import TvShow from "./components/TvShow/TvShow";
-import Movies from "./components/Movies/Movies";
 
 class App extends Component {
   //get value of search when button is clicked
@@ -26,9 +23,6 @@ class App extends Component {
           <Navigation getMovies={this.getMovies} />
           <Switch>
             <Route exact path="/" component={LandingPage} />
-            <Route path="/movies" component={Movies} />
-            <Route path="/tvshow" component={TvShow} />
-            <Route path="/people" component={People} />
           </Switch>
         </Router>
       </Suspense>

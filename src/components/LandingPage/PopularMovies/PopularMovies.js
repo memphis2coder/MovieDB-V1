@@ -8,7 +8,6 @@ const PopularMovies = props => {
         <img src={props.image} className="card-img-top" alt="img" />
         <div className="card-body">
           <h5 className="card-title">{props.title}</h5>
-          <a href="/" className="stretched-link" alt="image"></a>
           <div className="card-footer">
             <small className="text-muted">Rating: {props.rating}</small>
           </div>
