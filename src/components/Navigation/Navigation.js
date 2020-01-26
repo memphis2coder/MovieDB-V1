@@ -31,7 +31,7 @@ const Navigation = props => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/tvshows" className="nav-link">
+                <Link to="/tvshow" className="nav-link">
                   TV SHOWS
                 </Link>
               </li>

@@ -24,8 +24,8 @@ class App extends Component {
       <Suspense fallback={<div>Loading...</div>}>
         <Router>
           <Navigation getMovies={this.getMovies} />
-          <LandingPage />
           <Switch>
+            <Route exact path="/" component={LandingPage} />
             <Route path="/movies" component={Movies} />
             <Route path="/tvshow" component={TvShow} />
             <Route path="/people" component={People} />

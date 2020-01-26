@@ -3,8 +3,9 @@ import React, { Component } from "react";
 export class TvShow extends Component {
   render() {
     return (
-      <div>
-        <h1>Tv Shows Page</h1>
+      <div className="container pt-5">
+        <h1>Tv Shows Webpage</h1>
+        <hr />
       </div>
     );
   }
