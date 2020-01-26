@@ -8,15 +8,28 @@ import "./LandingPage.css";
 
 function LandingPage() {
   const [movies, setMovies] = useState([]);
+  const [CurrentPage, setCurrentPage] = useState(0);
 
   useEffect(() => {
-    fetch(`${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page1`)
+    const endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page1`;
+    fetchMovies(endpoint);
+  }, []);
+
+  const fetchMovies = path => {
+    fetch(path)
       .then(response => response.json())
       .then(response => {
         console.log(response);
         setMovies(response.results);
+        setCurrentPage(response.page);
       });
-  }, []);
+  };
+  // click event for load more button
+  const handleClick = () => {
+    const endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=${CurrentPage +
+      1}`;
+    fetchMovies(endpoint);
+  };
 
   return (
     <div className="app">
@@ -54,6 +67,11 @@ function LandingPage() {
               ))}
           </div>
           <br />
+          <div className="text-center pb-3">
+            <button onClick={handleClick} className="btn btn-success">
+              Load More
+            </button>
+          </div>
         </div>
       </section>
       {/* end of popularMovies */}
